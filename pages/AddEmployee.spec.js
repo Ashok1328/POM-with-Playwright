@@ -1,7 +1,7 @@
 exports.AddEmployee = class AddEmployee {
   constructor(page) {
     this.page = page;
-    this.PIMLink = "//a[@class='oxd-main-menu-item active']";
+   // this.PIMLink = "//a[@class='oxd-main-menu-item active']";
     this.addEmployeeLink = "//a[normalize-space()='Add Employee']";
     this.employeeFullName = "//input[@placeholder='First Name']";
     this.employeeLastname = "//input[@placeholder='Last Name']";

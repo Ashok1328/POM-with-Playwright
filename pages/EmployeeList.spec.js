@@ -1,3 +1,0 @@
-exports.EmployeeList = class EmployeeList{
-  
-}
