@@ -17,7 +17,19 @@ exports.RecruitmentEmployee = class RecruitmentEmployee {
 
   async addCandidates(username) {
     this.page.getByRole("link", { name: "Recruitment" }).click();
-    this.page.locator(this.jobTitle).selectOption("QA Engineer"); ////span[normalize-space()='QA Engineer']
+
+    this.page.locator(this.jobTitle).click(); ////span[normalize-space()='QA Engineer']
+    await this.page.waitForTimeout(3000);
+
+    const options = await this.page.$$("//div[@role='listbox']//span");
+    for (let option of options) {
+      const jobTitles = await option.textContent();
+
+      if (jobTitles.includes("QA Engineer")) {
+        await option.click();
+        break;
+      }
+    }
     this.page.locator(this.vacancy).selectOption("Junior QA Engineer");
     this.page.locator(this.hiringManager).selectOption("Rahul Patil");
     this.page.locator(this.status).selectOption("Job Offered");
