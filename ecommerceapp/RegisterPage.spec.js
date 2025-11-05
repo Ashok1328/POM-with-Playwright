@@ -15,6 +15,7 @@ exports.RegisterPage = class RegisterPage {
     await this.page.locator(this.signupLink).click();
     await this.page.locator(this.usernameInput).fill(username);
     await this.page.locator(this.passwordInput).fill(password);
-    await this.page.locator(this.signupBtn).click();
+    await this.page.getByRole("button", { name: "Sign up" }).click();
+    await this.page.getByLabel("Sign up").getByText("Close").click();
   }
 };

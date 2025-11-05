@@ -9,6 +9,7 @@ exports.PlaceOrder = class PlaceOrder {
     this.month = "#month";
     this.year = "#year";
     this.purchaseBtn = "//button[normalize-space()='Purchase']";
+    this.dialogOkBtn = "//button[normalize-space()='OK']";
   }
 
   async shippingAddress(userName, Country, City, CreditCard, Month, Year) {
@@ -28,5 +29,7 @@ exports.PlaceOrder = class PlaceOrder {
 
       await this.page.waitForTimeout(3000);
     });
+
+    await this.page.locator(this.dialogOkBtn).click();
   }
 };
