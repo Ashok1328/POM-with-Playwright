@@ -40,6 +40,8 @@ test("DemoBlaze", async ({ page }) => {
   );
   expect(await status).toBe(true);
 
+  await page.waitForTimeout(3000);
+
   //PalceOrder
   const order = new PlaceOrder(page);
   await order.shippingAddress(

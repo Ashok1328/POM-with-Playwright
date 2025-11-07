@@ -10,6 +10,8 @@ exports.PlaceOrder = class PlaceOrder {
     this.year = "#year";
     this.purchaseBtn = "//button[normalize-space()='Purchase']";
     this.dialogOkBtn = "//button[normalize-space()='OK']";
+    this.closeBtn =
+      "//div[@id='orderModal']//button[@type='button'][normalize-space()='Close']";
   }
 
   async shippingAddress(userName, Country, City, CreditCard, Month, Year) {
@@ -26,10 +28,9 @@ exports.PlaceOrder = class PlaceOrder {
       if (dialog.message().includes("Thank you for your purchase!")) {
         await dialog.accept();
       }
-
-      await this.page.waitForTimeout(3000);
     });
 
     await this.page.locator(this.dialogOkBtn).click();
+    await this.page.locator(this.closeBtn).click();
   }
 };
