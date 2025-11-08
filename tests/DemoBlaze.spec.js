@@ -52,7 +52,6 @@ test("DemoBlaze", async ({ page }) => {
     "Feb",
     "2024"
   );
-  await page.waitForTimeout(5000);
 
   //Logout
   const logout = new Logoutpage(page);
