@@ -1,3 +1,8 @@
 exports.LogoutPage = class LoginPage {
-  constructor(page) {}
+  constructor(page) {
+    this.page = page;
+    this.accountBtn = "";
+  }
+
+  async accountBtn() {}
 };
