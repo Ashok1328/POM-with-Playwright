@@ -1,13 +1,13 @@
 exports.LoginPage = class LoginPage {
   constructor(page) {
     this.page = page;
-    this.usernameInput = "";
-    this.passwordInput = "";
-    this.loginBtn = "";
+    this.usernameInput = "#email";
+    this.passwordInput = "#password";
+    this.loginBtn = "//button[normalize-space()='Login']";
   }
 
   async gotoLoginpage() {
-    await this.page.goto("");
+    await this.page.goto("https://stage.careerservicelab.com/login");
   }
 
   async login(username, password) {

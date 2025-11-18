@@ -1,3 +1,5 @@
+const { LoginPage } = require("../ecommerceapp/LoginPage.spec");
+
 exports.JobOpportunitiesPage = class JobOpportunitiesPage
 {
   constructor(page)
