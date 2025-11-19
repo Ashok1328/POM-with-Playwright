@@ -1,5 +1,6 @@
 import {test, expect} from "@playwright/test"
 import { LoginPage } from "../carriercenterapp/LoginPage.spec";
+import { JobOpportunitiesPage } from "../carriercenterapp/JobOpportunitiesPage.spec";
 
 test("Carrier Service Center", async({page}) =>
 {
@@ -12,10 +13,13 @@ test("Carrier Service Center", async({page}) =>
     await this.page.waitForTimeout(3000);
 
   //Add job 
+    const createJob = new JobOpportunitiesPage(page);
+    await createJob.addJob();
+
+    await this.page.waitForTimeout(3000);
 
 
-
-  // Add decsription page
+  // Add job decsription
 
 
 
