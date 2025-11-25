@@ -1,4 +1,4 @@
-const { LoginPage } = require("../ecommerceapp/LoginPage.spec");
+
 
 exports.JobOpportunitiesPage = class JobOpportunitiesPage {
   constructor(page) {
@@ -10,7 +10,7 @@ exports.JobOpportunitiesPage = class JobOpportunitiesPage {
   }
 
   async addJob() {
-    await this.page.locaors(this.jobOpportunitiesLink).click();
+    await this.page.locators(this.jobOpportunitiesLink).click();
     await this.page.locators(this.createJobOpportunitiesBtn).click();
   }
 };
